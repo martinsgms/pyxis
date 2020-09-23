@@ -11,17 +11,19 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "PYX_DISPONIBILIDADE")
-public class Disponibilidade {
-
+@Table(name = "PYX_ESCALA")
+public class Escala {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne 
+	@ManyToOne
 	private Acolito acolito;
 	
 	@ManyToOne
+	private Funcao funcao;
+
+	@ManyToOne
 	private Missa missa;
-	
 }

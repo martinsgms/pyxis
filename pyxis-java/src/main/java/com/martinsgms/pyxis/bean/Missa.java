@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -31,7 +32,16 @@ public class Missa {
 	@Enumerated(EnumType.STRING)
 	private ComunidadesParoquiaisEnum local;
 	
+	@Column(name = "DS_TITULO")
+	private String titulo;
+	
+	@Column(name = "DS_CELEBRANTE")
+	private String celebrante;
+	
 	@Column(name = "DH_HORARIO")
 	private LocalDateTime data;
+	
+	@OneToOne
+	private Escala escala;
 	
 }

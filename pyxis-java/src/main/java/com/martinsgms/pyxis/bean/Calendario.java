@@ -1,27 +1,27 @@
 package com.martinsgms.pyxis.bean;
 
+import java.time.LocalDate;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-@Table(name = "PYX_DISPONIBILIDADE")
-public class Disponibilidade {
-
+@Table(name = "PYX_CALENDARIO")
+@Data @NoArgsConstructor
+public class Calendario {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne 
-	private Acolito acolito;
-	
-	@ManyToOne
-	private Missa missa;
+	@Column(name = "DT_DATA")
+	private LocalDate data;
 	
 }
